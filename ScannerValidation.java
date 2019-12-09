@@ -58,28 +58,19 @@ public class ScannerValidation {
 		return scan.next();
 	}
 	
-	//pobiera ze skanera stringa o zadanej długości
-		public static String getStringLength(String message, int length) {
-			Scanner scan= new Scanner(System.in);
-			System.out.println(message);
-			
-			while(scan.next().length()<length) {
-				System.out.println("Minimum 3 znaki \n"+message);
-	    		scan.next();
-			}
-			
-			
-			return scan.next();
-			
-		}
+
 		//pobiera ze skanera stringa o konkretnej wartości
 				public static String getSpecificString(String... args) {
 					Scanner scan= new Scanner(System.in);
 					String message="Wpisz swoją odpowiedź";
 					System.out.println(message);
+					int arrayLength=args.length;
 					
-					while(scan.next().length()<length) {
+					
+					
+					while(!scan.next().equals(args)) {
 						System.out.println("Odpowiedź z konkretnego zakresu \n"+message);
+						System.out.println(arrayLength);
 			    		scan.next();
 					}
 					
